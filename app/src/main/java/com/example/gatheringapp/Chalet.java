@@ -19,6 +19,11 @@ public class Chalet {
         this.chalet_price = chalet_price;
     }
 
+    public Chalet(String chalet_name, int chalet_price) {
+        this.chalet_name = chalet_name;
+        this.chalet_price = chalet_price;
+    }
+
     public String getChalet_name() {
         return chalet_name;
     }

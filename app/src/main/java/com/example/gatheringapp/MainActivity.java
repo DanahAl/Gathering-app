@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView chaletList;
     Button AddButton;
+    DataBaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,33 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         chaletList =(ListView) findViewById(R.id.chaletList);
         AddButton = (Button) findViewById(R.id.AddButton);
-
-        ArrayList<Chalet> chalets = new ArrayList<>();
-        chalets.add(new Chalet("chaletN1" , 1 , "The first chalet",
-                "Riyadh , Alolya" , 500
-        ));
-
-        chalets.add(new Chalet("chaletN12" , 2 , "The sec chalet",
-                "Riyadh , alhazm" , 440
-        ));
+        db = new DataBaseHelper(this);
 
 
-        chalets.add(new Chalet("chaletN12" , 2 , "The sec chalet",
-                "Riyadh , alhazm" , 440
-        ));
 
-        chalets.add(new Chalet("chaletN12" , 2 , "The sec chalet",
-                "Riyadh , alhazm" , 440
-        ));
+        ArrayList<Chalet> chalets = db.getAllChalets();
 
-        chalets.add(new Chalet("chaletN12" , 2 , "The sec chalet",
-                "Riyadh , alhazm" , 440
-        ));
-
-
-        chalets.add(new Chalet("chaletN12" , 2 , "The sec chalet",
-                "Riyadh , alhazm" , 440
-        ));
 
 
         ChaletAdaptor chaletAdaptor = new ChaletAdaptor(this , R.layout.item_chalet , chalets);
@@ -63,5 +44,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        chaletList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent =  new Intent(MainActivity.this , Chalet_detiles.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
+    protected void onResume( ) { // update list during running app
+        super.onResume();
+
+        ArrayList<Chalet> chalets = db.getAllChalets();
+
+
+        ChaletAdaptor chaletAdaptor = new ChaletAdaptor(this , R.layout.item_chalet , chalets);
+        chaletList.setAdapter(chaletAdaptor);
+
+
+    }
+
 }

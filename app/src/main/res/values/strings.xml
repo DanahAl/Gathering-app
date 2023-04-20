@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Gathering app</string>
+
+
+    <string name="textName">
+       Chalet Name
+    </string>
+
+    <string name="Price">
+        4000
+    </string>
+
+
+
+
+
+
 </resources>
