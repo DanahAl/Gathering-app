@@ -13,24 +13,36 @@
     <EditText
         android:id="@+id/EditName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your name"></EditText>
+        android:layout_height="76dp"
+        android:hint="Chalet Name"></EditText>
 
 
     <EditText
-        android:id="@+id/EditPhone"
+        android:id="@+id/EditPrice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter phone number" ></EditText>
+        android:layout_height="67dp"
+        android:hint="Chalet Price"></EditText>
+
+    <EditText
+        android:id="@+id/EditDec"
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:hint="Chalet Description"></EditText>
+
+    <EditText
+        android:id="@+id/EditAddress"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:hint="Chalet Address"></EditText>
 
 
     <Button
         android:id="@+id/AddButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Confirm"
+        android:layout_height="68dp"
+        android:layout_marginTop="50dp"
+        android:text="Add"
         android:textColor="#fff"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"></Button>
+        android:textStyle="bold"></Button>
 
 </LinearLayout>

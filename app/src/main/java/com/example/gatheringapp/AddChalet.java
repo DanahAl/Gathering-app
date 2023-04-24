@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class AddChalet extends AppCompatActivity {
 DataBaseHelper db ;
-    EditText EditName , EditPhone;
+    EditText EditName , EditPrice , EditDec , EditAddress;
     Button AddButton;
 
     @Override
@@ -20,7 +20,10 @@ DataBaseHelper db ;
 
 
         EditName = (EditText) findViewById(R.id.EditName);
-        EditPhone = (EditText) findViewById(R.id.EditPhone);
+        EditPrice = (EditText) findViewById(R.id.EditPrice);
+        EditAddress = (EditText)  findViewById(R.id.EditAddress);
+        EditDec = (EditText)  findViewById(R.id.EditDec);
+
         AddButton = (Button)  findViewById(R.id.AddButton);
 
         db = new DataBaseHelper(this);
@@ -29,12 +32,14 @@ DataBaseHelper db ;
             public void onClick(View v) {
 
                String name = EditName.getText().toString();
-               int Price =Integer.parseInt (EditPhone.getText().toString());
+               int Price =Integer.parseInt (EditPrice.getText().toString());
+               String address = EditAddress.getText().toString();
+               String description = EditDec.getText().toString();
 
 
-                Chalet chalet = new Chalet(name , Price);
-                db.addChalet(chalet);
-                Toast.makeText(AddChalet.this , "Chalet added", Toast.LENGTH_SHORT).show();
+                Chalet chalet = new Chalet(name , -1   ,description, address , Price);
+             boolean added =   db.addChalet(chalet);
+                Toast.makeText(AddChalet.this , "Chalet added " + added, Toast.LENGTH_SHORT).show();
 
             }
         });

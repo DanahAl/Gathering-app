@@ -23,18 +23,25 @@ public class ChaletAdaptor extends ArrayAdapter<Chalet>{
     }
 
 
-    @NonNull
-    @Override
+    /*
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(resource , parent , false);
          // conertview to help when scroll down list
         TextView name =(TextView) convertView.findViewById(R.id.Name1);
-        TextView phone =(TextView) convertView.findViewById(R.id.phone1);
+        TextView price =(TextView) convertView.findViewById(R.id.EditPrice);
+        TextView description = (TextView)  convertView.findViewById(R.id.EditDec);
+        TextView address = (TextView)  convertView.findViewById(R.id.EditAddress);
+
 
         Chalet currentChalet = getItem(position);
 
        name.setText(currentChalet.getChalet_name());
-       phone.setText(String.valueOf(currentChalet.getChalet_price()));
+       price.setText(String.valueOf(currentChalet.getChalet_price()));
+       description.setText(currentChalet.getChalet_decription());
+       address.setText(currentChalet.getChalet_address());
+
         return convertView;
     }
+
+     */
 }

@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        ArrayList<Chalet> chalets = db.getAllChalets();
+      // ArrayList<Chalet> chalets = db.getAllChalets();
 
 
-
-        ChaletAdaptor chaletAdaptor = new ChaletAdaptor(this , R.layout.item_chalet , chalets);
+/*
+       ChaletAdaptor chaletAdaptor = new ChaletAdaptor(this , R.layout.item_chalet , chalets);
         chaletList.setAdapter(chaletAdaptor);
-
+*/
 
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +56,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+    /*
     protected void onResume( ) { // update list during running app
         super.onResume();
+
 
         ArrayList<Chalet> chalets = db.getAllChalets();
 
@@ -67,5 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+*/
+
+
 
 }
