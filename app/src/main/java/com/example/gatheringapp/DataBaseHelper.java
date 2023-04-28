@@ -58,14 +58,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(chalet_ID , chalet.getChalet_id());
+    //    values.put(chalet_ID , chalet.getChalet_id());
         values.put(chalet_name , chalet.getChalet_name());
         values.put(CHALET_DECRIPTION , chalet.getChalet_decription());
         values.put(CHALET_ADDRESS , chalet.getChalet_address());
         values.put(chalet_price , chalet.getChalet_price());
-
-        values.put(chalet_price , chalet.getChalet_price());
-
         values.put(imageName , chalet.getImageName());
         values.put(image, chalet.getImage());
 
