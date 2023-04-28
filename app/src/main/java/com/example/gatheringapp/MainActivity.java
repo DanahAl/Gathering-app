@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.nio.BufferUnderflowException;
 import java.util.ArrayList;
@@ -17,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     ListView chaletList;
     Button AddButton;
     DataBaseHelper db;
+    private TextView image_detailes;
+    private ImageView imageView;
+private ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         chaletList =(ListView) findViewById(R.id.chaletList);
         AddButton = (Button) findViewById(R.id.AddButton);
+
         db = new DataBaseHelper(this);
+
+
 
 
 
@@ -35,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
        ChaletAdaptor chaletAdaptor = new ChaletAdaptor(this , R.layout.item_chalet , chalets);
         chaletList.setAdapter(chaletAdaptor);
 */
+
+
 
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 */
+
 
 
 
