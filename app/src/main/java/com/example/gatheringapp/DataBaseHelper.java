@@ -76,10 +76,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
            return true;
     }
 
+    public boolean DeleteOne(Chalet chalet){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString= "Delete From " + chalet_table + " WHERE " + chalet_ID + " = " + chalet.getChalet_id() ;
+        Cursor cursor = db.rawQuery(queryString, null);
+        if(cursor.moveToFirst()){
+            return true;
+        } else{
+            // nothing happens. no one is added.
+            return false;
+        }
 
 
 
-    public ArrayList<Chalet> getAllChalets() {
+
+
+        public ArrayList<Chalet> getAllChalets() {
 
         ArrayList<Chalet> chalets = new ArrayList<>();
 
